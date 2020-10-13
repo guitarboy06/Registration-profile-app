@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{username}}{% endblock %}
+{% block content %}
+{% with message = get_flashed_messages() %}
+{% if message %}
+{% for msg in message %}
+<div class="row justify-content-lg-center pt-3">
+    <div class="alert alert-danger" role="alert">
+        {{msg}}
+        <button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container h-500 p-3">
+    <div class="card">
+        <div class="container-fluid p-3" style="color: blueviolet">
+            <h1 class="display-4" align="center">Welcome to Registration App</h1>
+        </div>
+        <div class="card" style="background-color: antiquewhite">
+            <center><img src={{img}} class="card-img-top" style="width: 18rem" alt="image" width="300" height="300">
+            </center>
+            <div class="card-body" align="center">
+                <div class="col-8 p-2" style="font-size: large">
+                    <div class="card shadow-lg pl-3" align="center" style="background-color: lightskyblue">
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Name</div>
+                            <div class="col-8 shadow-none pl-5">{{name}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Email</div>
+                            <div class="col-8 shadow-none pl-5">{{email}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Age</div>
+                            <div class="col-8 shadow-none pl-5">{{age}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">DOB</div>
+                            <div class="col-8 shadow-none pl-5">{{dob}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4">Guardian Name</div>
+                            <div class="col-8 shadow-none pl-5">{{guardian_name}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Phone</div>
+                            <div class="col-8 shadow-none pl-5">{{phone}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Address</div>
+                            <div class="col-8 shadow-none pl-5">{{address}}</div>
+                        </div>
+                        <div class="row p-2" align="center">
+                            <div class="col-4 pl-3">Occupation</div>
+                            <div class="col-8 shadow-none pl-5">{{occupation}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2" align="center">
+                <a class="btn btn-outline-info btn-lg" href="/edit" role="button">Edit</a>
+                <a class="btn btn-outline-secondary btn-lg pl-3" href="/logout" role="button">Log Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

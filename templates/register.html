@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{%block title %}Register{% endblock %}
+{% block content %}
+{% with message = get_flashed_messages() %}
+{% if message %}
+{% for msg in message %}
+<div class="row justify-content-lg-center pt-3">
+    <div class="alert alert-danger" role="alert">
+        {{msg}}
+        <button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container h-700">
+    <div class="row justify-content-center">
+        <div class="col-md-12 pt-5">
+            <form class="card bg-light p-3" enctype="multipart/form-data" method="POST">
+                <div class="card-header h4" align="CENTER"><strong>Sign up</strong></div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Name:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="f_name" placeholder="First Name" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="l_name" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Email Address:</div>
+                        <div class="col"><input class="form-control" type="email" placeholder="example@gmail.com"
+                                                name="email"></div>
+                        <div class="col-auto pt-2">Phone:</div>
+                        <div class="col"><input type="tel" class="form-control" pattern="[0-9]{10}" name="phone"
+                                                placeholder="like,'09876789678'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Username:</div>
+                        <div class="col"><input class="form-control" type="text" placeholder="@abc123"
+                                                name="u_name" required></div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Guardian's Name:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="f_g_name" placeholder="First Name" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="l_g_name" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Address:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Date of Birth:</div>
+                        <div class="col">
+                            <input type="date" class="form-control" name="dob" required>
+                        </div>
+                        <div class="col-auto pt-2">Occupation:</div>
+                        <div class="col">
+                            <input type="tesxt" class="form-control" name="occupation" placeholder="like, student"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Profile Picture:</div>
+                        <div class="col-8 custom-file pt-2">
+                            <input type="file" name="img" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Password:</div>
+                        <div class="col">
+                            <input type="password" class="form-control" name="psd" placeholder="Enter Password"
+                                   onkeypress="checkPass()" required>
+                        </div>
+                        <div class="col-auto pt-2">Confirm:</div>
+                        <div class="col">
+                            <input type="password" class="form-control" name="rpsd" placeholder="Re-enter Password"
+                                   onkeypress="checkPass()" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-3" align="center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

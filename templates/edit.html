@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}edit profile{% endblock %}
+{% block content %}
+<div class="container h-700">
+    <div class="row justify-content-center">
+        <div class="col-md-12 pt-5">
+            <form class="card bg-light p-3" enctype="multipart/form-data" method="POST">
+                <div class="card-header h4" align="CENTER"><strong>Edit Profile</strong></div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Name:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="f_name" placeholder="Name" value={{f_name}}
+                                   required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="l_name" placeholder="Last Name"
+                                   value={{l_name}} required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Email Address:</div>
+                        <div class="col"><input class="form-control" type="email" placeholder="example@gmail.com"
+                                                value={{email}}
+                                                name="email"></div>
+                        <div class="col-auto pt-2">Phone:</div>
+                        <div class="col"><input type="tel" class="form-control" pattern="[0-9]{10}" name="phone"
+                                                value={{phone}} placeholder="like,'9876789678'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Username:</div>
+                        <div class="col"><input class="form-control" type="text" placeholder="@abc123"
+                                                value={{username}} name="u_name" required></div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Guardian's Name:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="f_g_name" placeholder="First Name"
+                                   value={{f_g_name}} required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="l_g_name" placeholder="Last Name"
+                                   value={{l_g_name}} required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Date of Birth:</div>
+                        <div class="col">
+                            <input type="date" class="form-control" name="dob" value={{dob}} required>
+                        </div>
+                        <div class="col-auto pt-2">Occupation:</div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="occupation" placeholder="like, student"
+                                   value={{occupation}} required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <div class="row">
+                        <div class="col-auto pt-2">Password:</div>
+                        <div class="col">
+                            <input type="password" class="form-control" name="psd" placeholder="Enter Password"
+                                   value={{psd}} required>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-3" align="center">
+                    <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

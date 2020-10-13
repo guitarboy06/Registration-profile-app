@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1 class="display-1" align="CENTER" style="font-family: 'Microsoft Himalaya'; font-weight: 700; color: bisque">
+    REGISTRATION APP</h1>
+{% with message = get_flashed_messages() %}
+{% if message %}
+{% for msg in message %}
+<div class="row justify-content-lg-center pt-3">
+    <div class="alert alert-danger" role="alert">
+        {{msg}}
+        <button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container h-300">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 pt-5">
+            <form class="card mb-3 p-3" method="POST"
+                  style="background: transparent!important; backdrop-filter: blur(7px); font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif, bold">
+                <div class="card-header h4" align="CENTER"><strong>Login/Sign up</strong></div>
+                <div class="form-group pt-3">
+                    <label for="uname"><strong>Username</strong></label>
+                    <input type="text" class="form-control bg-transparent border-2" id="uname" name="uname"
+                           placeholder="Enter Username" style="opacity: 1; color: black">
+                </div>
+                <div class="form-group pt-2">
+                    <label for="psd"><strong>Password</strong></label>
+                    <input type="password" class="form-control bg-transparent border-2" id="psd" name="psd"
+                           placeholder="Enter Password" style="opacity: 1; color: black">
+                </div>
+                <a class="pb-2" href="/register" align="CENTER" style="color: black">New around here? Sign up</a>
+                <button type="submit" class="btn btn-primary pt-2" style="background: transparent">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
