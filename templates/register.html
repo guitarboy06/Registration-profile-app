@@ -93,13 +93,14 @@
                     <div class="row">
                         <div class="col-auto pt-2">Password:</div>
                         <div class="col">
-                            <input type="password" class="form-control" name="psd" placeholder="Enter Password"
-                                   onkeypress="checkPass()" required>
+                            <input type="password" class="form-control" name="psd" id="psd" placeholder="Enter Password"
+                                   onkeyup="checkPass()" required>
                         </div>
                         <div class="col-auto pt-2">Confirm:</div>
                         <div class="col">
-                            <input type="password" class="form-control" name="rpsd" placeholder="Re-enter Password"
-                                   onkeypress="checkPass()" required>
+                            <input type="password" class="form-control" name="rpsd" id="rpsd" placeholder="Re-enter Password"
+                                   onkeyup="checkPass()" required>
+                            <span id="msg"></span>
                         </div>
                     </div>
                 </div>
